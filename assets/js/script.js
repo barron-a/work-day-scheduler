@@ -1,4 +1,5 @@
 // variables
+var items = JSON.parse(localStorage.getItem("items")) || [];
 var currentDate = moment().format("dddd MMMM Do");
 var nineAm = moment().hour(9).format("h a");
 var tenAm = moment().hour(10).format("h a");
@@ -16,11 +17,26 @@ document.getElementById("currentDay").innerHTML = currentDate;
 // display times for rows
 document.getElementById("nine-am").innerHTML = nineAm;
 document.getElementById("ten-am").innerHTML = tenAm;
-document.getElementById("eleven-am").innerHTML = elevenAm;
-document.getElementById("twelve-pm").innerHTML = twelvePm;
-document.getElementById("one-pm").innerHTML = onePm;
-document.getElementById("two-pm").innerHTML = twoPm;
-document.getElementById("three-pm").innerHTML = threePm;
-document.getElementById("four-pm").innerHTML = fourPm;
-document.getElementById("five-pm").innerHTML = fivePm;
 
+
+function textAreaColor() {
+    if (moment().isAfter(tenAm)) {
+        var color = "gray"
+        console.log(color);
+    };
+};
+
+$(".btn").on("click", function(event) {
+    event.preventDefault();
+
+    var item = $("#item").val().trim();
+
+    // Add the new event to events array
+    items.push(item);
+
+    // Save events to local storage
+    localStorage.setItem('itemList', JSON.stringify(items));
+    console.log(items);
+  });
+
+  textAreaColor();
