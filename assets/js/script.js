@@ -20,10 +20,23 @@ document.getElementById("ten-am").innerHTML = tenAm;
 
 
 function textAreaColor() {
-    if (moment().isAfter(tenAm)) {
-        var color = "gray"
-        console.log(color);
-    };
+    $(".time-block").each(function() {
+
+        var currentHour = moment().format("HH");
+        var compareHour = $(this).attr("id");
+
+        if (currentHour < compareHour) {
+            $(".time-block").addClass("future");
+        }
+        else if (currentHour > compareHour) {
+            $(".time-block").addClass("past");
+        }
+        else {
+            $(".time-block").addClass("present");
+        };
+    });
+
+
 };
 
 $(".btn").on("click", function(event) {
@@ -35,8 +48,7 @@ $(".btn").on("click", function(event) {
     items.push(item);
 
     // Save events to local storage
-    localStorage.setItem('itemList', JSON.stringify(items));
-    console.log(items);
+    localStorage.setItem('items', JSON.stringify(items));
   });
 
   textAreaColor();
