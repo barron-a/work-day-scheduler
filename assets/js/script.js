@@ -24,15 +24,16 @@ function textAreaColor() {
 
         var currentHour = moment().format("HH");
         var compareHour = $(this).attr("id");
+        console.log(currentHour, compareHour);
 
-        if (currentHour < compareHour) {
-            $(".time-block").addClass("future");
+        if (+currentHour < compareHour) {
+            $(this).addClass("future");
         }
-        else if (currentHour > compareHour) {
-            $(".time-block").addClass("past");
+        else if (+currentHour > compareHour) {
+            $(this).addClass("past");
         }
         else {
-            $(".time-block").addClass("present");
+            $(this).addClass("present");
         };
     });
 
