@@ -1,5 +1,5 @@
 // variables
-var items = JSON.parse(localStorage.getItem("items")) || [];
+var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 var currentDate = moment().format("dddd MMMM Do");
 var nineAm = moment().hour(9).format("h a");
 var tenAm = moment().hour(10).format("h a");
@@ -24,7 +24,6 @@ function textAreaColor() {
 
         var currentHour = moment().format("HH");
         var compareHour = $(this).attr("id");
-        console.log(currentHour, compareHour);
 
         if (+currentHour < compareHour) {
             $(this).addClass("future");
@@ -36,20 +35,22 @@ function textAreaColor() {
             $(this).addClass("present");
         };
     });
-
-
 };
+
+function showItems() {
+    document.getElementById()
+}
 
 $(".btn").on("click", function(event) {
     event.preventDefault();
 
-    var item = $("#item").val().trim();
+    var task = $("#task").val().trim();
 
     // Add the new event to events array
-    items.push(item);
+    tasks.push(task);
 
     // Save events to local storage
-    localStorage.setItem('items', JSON.stringify(items));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   });
 
   textAreaColor();
