@@ -10,9 +10,9 @@ Additionally, there is color coding based on time of day. The text area will be 
 
 ## Visuals
 
-### Welcome Screen
+### Blank Work Day Example
 ![Blank Work Day Example](/assets/images/workday-scheduler-blank-day.jpg)
-### Question Example
+### Example With Saved Events
 ![Saved Events Example](/assets/images/workday-scheduler-saved-events.jpg)
 
 ## Technologies Used
