@@ -59,15 +59,15 @@ $(document).ready(function() {
     });
 
     function loadStorage() {
-        var nineTask = localStorage.getItem("9");
+        var nineTask = localStorage.getItem("09");
         var tenTask = localStorage.getItem("10");
         var elevenTask = localStorage.getItem("11");
         var twelveTask = localStorage.getItem("12");
-        var oneTask = localStorage.getItem("1");
-        var twoTask = localStorage.getItem("2");
-        var threeTask = localStorage.getItem("3");
-        var fourTask = localStorage.getItem("4");
-        var fiveTask = localStorage.getItem("5");
+        var oneTask = localStorage.getItem("13");
+        var twoTask = localStorage.getItem("14");
+        var threeTask = localStorage.getItem("15");
+        var fourTask = localStorage.getItem("16");
+        var fiveTask = localStorage.getItem("17");
 
         document.getElementById("9").querySelector(".description").textContent = nineTask
         document.getElementById("10").querySelector(".description").textContent = tenTask
