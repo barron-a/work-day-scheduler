@@ -16,7 +16,7 @@ $(document).ready(function() {
     // display current date
     document.getElementById("currentDay").innerHTML = currentDate;
 
-    // display times for rows
+    // display times for left-most column
     document.getElementById("nine-am").innerHTML = nineAm;
     document.getElementById("ten-am").innerHTML = tenAm;
     document.getElementById("eleven-am").innerHTML = elevenAm;
@@ -27,7 +27,7 @@ $(document).ready(function() {
     document.getElementById("four-pm").innerHTML = fourPm;
     document.getElementById("five-pm").innerHTML = fivePm;
 
-
+    // dynamically change background color of textarea based on comparison of if to time of day
     function textAreaColor() {
         $(".time-block").each(function() {
 
@@ -48,6 +48,7 @@ $(document).ready(function() {
 
     textAreaColor();
 
+    // click listener for assigning tasks to local storage with key of id, value of description
     $(".btn").on("click", function(event) {
         event.preventDefault();
 
@@ -58,7 +59,9 @@ $(document).ready(function() {
         localStorage.setItem(taskTime, task);
     });
 
+    // function to load saved items from local storage 
     function loadStorage() {
+        // get items from local storage
         var nineTask = localStorage.getItem("09");
         var tenTask = localStorage.getItem("10");
         var elevenTask = localStorage.getItem("11");
@@ -69,6 +72,7 @@ $(document).ready(function() {
         var fourTask = localStorage.getItem("16");
         var fiveTask = localStorage.getItem("17");
 
+        // insert items from local storage into textarea
         document.getElementById("09").querySelector(".description").textContent = nineTask
         document.getElementById("10").querySelector(".description").textContent = tenTask
         document.getElementById("11").querySelector(".description").textContent = elevenTask
