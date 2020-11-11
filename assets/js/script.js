@@ -69,15 +69,15 @@ $(document).ready(function() {
         var fourTask = localStorage.getItem("16");
         var fiveTask = localStorage.getItem("17");
 
-        document.getElementById("9").querySelector(".description").textContent = nineTask
+        document.getElementById("09").querySelector(".description").textContent = nineTask
         document.getElementById("10").querySelector(".description").textContent = tenTask
         document.getElementById("11").querySelector(".description").textContent = elevenTask
         document.getElementById("12").querySelector(".description").textContent = twelveTask
-        document.getElementById("1").querySelector(".description").textContent = oneTask
-        document.getElementById("2").querySelector(".description").textContent = twoTask
-        document.getElementById("3").querySelector(".description").textContent = threeTask
-        document.getElementById("4").querySelector(".description").textContent = fourTask
-        document.getElementById("5").querySelector(".description").textContent = fiveTask
+        document.getElementById("13").querySelector(".description").textContent = oneTask
+        document.getElementById("14").querySelector(".description").textContent = twoTask
+        document.getElementById("15").querySelector(".description").textContent = threeTask
+        document.getElementById("16").querySelector(".description").textContent = fourTask
+        document.getElementById("17").querySelector(".description").textContent = fiveTask
     }
     
     loadStorage();
