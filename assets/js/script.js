@@ -2,7 +2,7 @@ $(document).ready(function() {
   
    // variables
     var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    var currentDate = moment().format("dddd MMMM Do");
+    var currentDate = moment().format("dddd MMMM Do YYYY");
     var nineAm = moment().hour(9).format("h a");
     var tenAm = moment().hour(10).format("h a");
     var elevenAm = moment().hour(11).format("h a");
